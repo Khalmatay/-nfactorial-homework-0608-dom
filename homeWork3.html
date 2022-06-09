@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Diskoteka</title>
+</head>
+<body>
+    <div class="background"></div>
+        <video id="video-background" autoplay>
+            <source id="video-background" src="./vidosiki/Instarding.mp4"></source>
+        </video>
+        
+        <div class="container" id="container">
+            <div class="header">
+                <h1>Music Player</h1>
+                <img id="play-stop" class="media-btn" src="vidosiki/pause.png">
+                <img id="forward" class="media-btn" src="vidosiki/forward-button.png">
+            </div>
+        </div>
+</body>
+
+<script>
+    let videoBackground = document.getElementById("video-background")
+    const btmNexxt = document.getElementById("forward")
+    let audioElem =  document.getElementById("play-stop")
+
+    let btmPlay="vidosiki/play-buttton.png"
+    let btmStop="vidosiki/pause.png"
+    let videoMyKent="vidosiki/Mykent.mp4"
+    let videoInstarding="./vidosiki/Instarding.mp4"
+    
+
+    function playVideo(){
+        
+        if (videoBackground.paused) {
+            videoBackground.play()   
+            audioElem.src=btmStop; 
+
+        } else {
+            videoBackground.pause()
+            audioElem.src=btmPlay;
+        }
+    }
+    function changeVideo(){ 
+        console.log("check")
+        if(videoBackground.src=="./vidosiki/Instarding.mp4"){
+            console.log("Hell");
+            videoBackground.src=videoMyKent
+        } else {
+            videoBackground.src=videoInstarding
+            console.log(videoBackground.src)
+        }
+    }
+    
+    // audioBackground.play();
+    audioElem.addEventListener("click", playVideo)
+   
+    btmNexxt.addEventListener("click",changeVideo)
+    
+    
+</script>
+</html>
