@@ -27,7 +27,7 @@
 
     let btmPlay="vidosiki/play-buttton.png"
     let btmStop="vidosiki/pause.png"
-    let videoMyKent="vidosiki/Mykent.mp4"
+    let videoMyKent="./vidosiki/Mykent.mp4"
     let videoInstarding="./vidosiki/Instarding.mp4"
     
 
@@ -42,18 +42,15 @@
             audioElem.src=btmPlay;
         }
     }
+
     function changeVideo(){ 
-        console.log("check")
-        if(videoBackground.src=="./vidosiki/Instarding.mp4"){
-            console.log("Hell");
+        if(videoBackground.src === "file:///home/nurbek/nfactorial-homework-0608-dom/vidosiki/Instarding.mp4") {
             videoBackground.src=videoMyKent
         } else {
             videoBackground.src=videoInstarding
-            console.log(videoBackground.src)
         }
     }
     
-    // audioBackground.play();
     audioElem.addEventListener("click", playVideo)
    
     btmNexxt.addEventListener("click",changeVideo)
@@ -61,3 +58,11 @@
     
 </script>
 </html>
+
+
+
+
+arr = [v1, v2, v3, v4]
+i = 0
+
+v.src = arr[i]
